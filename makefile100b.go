@@ -40,7 +40,7 @@ func dosomeing(filef *os.File, j int, FILE int64, wa *sync.WaitGroup) {
         rand.Seed(time.Now().UnixNano())
 
         // 返回64位的随机数
-        _NUM := rand.Int63n(MAX_BYTE)
+        _NUM := rand.Int63n(MAX_BYTE)+1
         // fmt.Println("_NUM", _NUM)
         buffer := make([]byte,_NUM)
         // fmt.Println("buffer", string(buffer))
