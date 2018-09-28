@@ -40,7 +40,7 @@ do
    _NUM=$((RANDOM %$MAX_BYTE))
    
    # 取_NUM个字符输出到文件中
-   echo ${tmp:0:$_NUM} > $RESULT_PATH/$name &
+   echo ${tmp:1:$_NUM} > $RESULT_PATH/$name &
    #let TIMES=$TIMES+1
 
    #if [ $(($TIMES%100)) = '0' ]
