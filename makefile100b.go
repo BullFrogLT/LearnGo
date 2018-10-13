@@ -28,7 +28,7 @@ var (
 )
 
 
-func whitefield(fief *os.File, j int, FILE int64, wa *sync.WaitGroup) {
+func WhiteField(fief *os.File, j int, FILE int64, wa *sync.WaitGroup) {
 	for i:=1; int64(i) <= FILE; i++{
 		fileName := _dir + "/" + FilePrefix + "_" + fmt.Sprintf("%d", i) + "_" + fmt.Sprintf("%d", j) + FilePostfix
 		// fmt.Println("file_name:", file_name)
@@ -83,7 +83,7 @@ func main() {
 
 	for j :=1; j <= 10; j++ {
 		wg.Add(int(FILE))
-		go whitefield(file, j, FILE, &wg)
+		go WhiteField(file, j, FILE, &wg)
 	}
 	wg.Wait()
 
